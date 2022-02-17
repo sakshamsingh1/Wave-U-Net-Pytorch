@@ -78,7 +78,7 @@ def main(args):
         state = model_utils.load_model(model, optimizer, args.load_model, args.cuda)
 
     print('TRAINING START')
-    while state["worse_epochs"] < args.patience:
+    while state["epochs"] < 100:
         print("Training one epoch from iteration " + str(state["step"]))
         avg_time = 0.
         model.train()
